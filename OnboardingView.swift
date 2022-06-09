@@ -16,26 +16,11 @@ struct OnboardingView: View {
     var body: some View {
         ZStack {
             background
-            
-            button.view()
-                .frame(width: 236, height: 64)
-                .overlay(
-                Label("Start", systemImage: "arrow.forward")
-                    .offset(x: 4, y: 4)
-                    .font(.headline)
-                     )
-                .background(
-                    Color.black
-                        .cornerRadius(30)
-                        .blur(radius: 10)
-                        .opacity(0.3)
-                        .offset(y: 10)
-                )
-                .onTapGesture {
-                    button.play(animationName: "active")
-                }
+            button_start
         }
     }
+    
+    
     var background: some View{
         shapes.view()
             .ignoresSafeArea()
@@ -46,6 +31,27 @@ struct OnboardingView: View {
                 .offset(x: 150, y: 100)
         )
     }
+    
+    var button_start: some View{
+        button.view()
+            .frame(width: 236, height: 64)
+            .overlay(
+            Label("Start", systemImage: "arrow.forward")
+                .offset(x: 4, y: 4)
+                .font(.headline)
+                 )
+            .background(
+                Color.black
+                    .cornerRadius(30)
+                    .blur(radius: 10)
+                    .opacity(0.3)
+                    .offset(y: 10)
+            )
+            .onTapGesture {
+                button.play(animationName: "active")
+            }
+    }
+    
 
 }
 
