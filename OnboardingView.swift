@@ -16,7 +16,28 @@ struct OnboardingView: View {
     var body: some View {
         ZStack {
             background
-            button_start
+            //button_start
+            
+            
+            VStack(alignment: .leading, spacing: 16) {
+                Text("Welcome to the Pure")
+                    .font(.custom("Poppins Bold", size: 50, relativeTo: .largeTitle))
+                    .frame(width: 260, alignment: .leading)
+                
+                Text("Created by KeoFoxy")
+                    .customFont(.body)
+                    .opacity(0.8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                   Spacer()
+                
+                button_start
+                
+                Text("SomeText to be changed in the future")
+                    .customFont(.footnote)
+                    .opacity(0.7)
+            }
+            .padding(45)
+            .padding(.top, 40)
         }
     }
     
@@ -51,6 +72,7 @@ struct OnboardingView: View {
                 button.play(animationName: "active")
             }
     }
+     
     
 
 }
